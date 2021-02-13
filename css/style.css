@@ -9,30 +9,8 @@
   --fss: 25px; /* Greetings and Weather widger */
   --fses: 16px; /* Links List */
 
-  /* Light theme  */
-  --accent: #4b8ec4; /* Hover color */
-  --bg: #f5f5f5; /* Background color */
-  --sbg: #e4e6e6; /* Cards color */
-  --fg: #3a3a3a; /* Foreground color */
-  --sfg: #3a3a3a; /* Sceondary Foreground color */
-
-  /* Image background  */
-
-  /* Uncoment this section to get the 
-    image wallpaper. You can also 
-    change the --imgcol value 
-    to make the filter to your own */
-
-  /* --imgbg: url(/img/wal.jpg); */
-  --imgcol: linear-gradient(
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.7)
-  ); /* Filter color */
-}
-
 /* Dark theme  */
-.darktheme {
-  --accent: #4b8ec4; /* Hover color */
+--accent: #4b8ec4; /* Hover color */
   --bg: #19171a; /* Background color */
   --sbg: #201e21; /* Cards color */
   --fg: #d8dee9; /* Foreground color */
@@ -40,6 +18,21 @@
   --imgcol: linear-gradient(
     rgba(0, 0, 0, 0.7),
     rgba(0, 0, 0, 0.7)
+  ); /* Filter color */
+}
+
+.lighttheme {
+  /* Light theme  */
+  --accent: #4b8ec4; /* Hover color */
+  --bg: #f5f5f5; /* Background color */
+  --sbg: #e4e6e6; /* Cards color */
+  --fg: #3a3a3a; /* Foreground color */
+  --sfg: #3a3a3a; /* Sceondary Foreground color */
+
+  /* --imgbg: url(/img/wal.jpg); */
+  --imgcol: linear-gradient(
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.7)
   ); /* Filter color */
 }
 
@@ -51,6 +44,10 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   transition: 0.2s ease-in-out;
+}
+
+html {
+  background-color: #000000;
 }
 
 body {
@@ -84,7 +81,7 @@ body {
   height: 85vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   grid-gap: 30px;
   padding: 20px;
 }
@@ -109,7 +106,7 @@ body {
 }
 
 .weatherBlock {
-  grid-column: 3 / span 2;
+  grid-column: 3 / span 3;
   grid-row: 1 / span 2;
   display: flex;
   flex-direction: column;
@@ -176,8 +173,31 @@ body {
   color: var(--fg);
 }
 
+.searchBlock {
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBlock input {
+  font-size: 1.6em;
+  padding: 8px 24px;
+  border-radius: 5px;
+  background-color: #d8dee9;
+  border: 1px;
+  outline: none;
+  width: 60%;
+}
+
+.searchBlock form {
+  text-align: center;
+  width: 100%;
+}
+
 .buttonLink {
-  grid-row: 3 / span 2;
+  grid-row: 4 / span 3;
   grid-column: 1 / span 2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -239,11 +259,11 @@ body {
 
 .list__1 {
   grid-column: 3;
-  grid-row: 3 / span 2;
+  grid-row: 4 / span 3;
 }
 .list__2 {
   grid-column: 4;
-  grid-row: 3 / span 2;
+  grid-row: 4 / span 3;
 }
 .list__head {
   margin-top: 30px;
